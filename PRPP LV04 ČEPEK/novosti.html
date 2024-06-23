@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatika</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Italiana&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inria+Serif&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="home.html"> <img src="images/logo.png" alt="TVZ Logo"></a>
+            </div>
+            <div class="navigation">
+                <div class="nav-item dropdown">
+                    STUDIJI I STUDENTI
+                    <div class="dropdown-content">
+                        <a href="tvzmc2.html">TVZ MC2</a>
+                        <a href="#">SPORTSKA UDRUGA</a>
+                        <a href="upisi.html">UPISI</a>
+                        <div class="dropdown">
+                            PRIJEDIPLOMSKI
+                            <div class="sub-dropdown-content">
+                                <a href="#">INFORMATIKA</a>
+                                <a href="#">MEHATRONIKA</a>
+                                <a href="#">ELEKTROTEHNIKA</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    O NAMA
+                    <div class="dropdown-content">
+                        <a href="kontaktlokacija.html">KONTAKT I LOKACIJA</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item">@TVZ</a>
+                <a href="novosti.html" class="nav-item">NOVOSTI</a>
+                <a href="#" class="nav-item">NETAKADEMIJA</a>
+                <a href="#" class="nav-item">INFORMATIKA</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-content">
+                <h1>TVZ MC2</h1>
+            </div>
+            <div class="main-image">
+                <img src="images/novosti.png" alt="Novosti">
+            </div>
+        </div>
+        <footer>
+            <div class="contact-info">
+                <h2>Kontakt informacije</h2>
+                <p>
+                    Adresa: Vrbik 8 , 10000 Zagreb, Hrvatska<br>
+                    Telefon: +385 1 234 5678<br>
+                    Email: info@tvz.hr
+                </p>
+            </div>
+            <div class="social-media">
+                <h2>Društvene mreže</h2>
+                <div class="social-icons">
+                    <img src="images/drustvene.png" alt="Social Icons">
+                </div>
+            </div>
+            <div class="policies">
+                <p>Politika privatnosti<br>Uvjeti korištenja</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    this.querySelector('.dropdown-content').classList.toggle('show');
+                });
+            });
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown')) {
+                    const dropdowns = document.querySelectorAll('.dropdown-content');
+                    dropdowns.forEach(dropdown => {
+                        if (dropdown.classList.contains('show')) {
+                            dropdown.classList.remove('show');
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
